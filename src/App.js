@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import Budget from "./components/Leftpanel/Budget"
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <h1> Hi im from React</h1>
+        <Budget />
       </div>
     )
   }

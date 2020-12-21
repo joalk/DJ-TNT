@@ -7,6 +7,7 @@ module.exports = {
         filename: 'bundle.js',
     },
     devServer: {
+        hot:true,
         publicPath: 'bundle',
         proxy: {
             '/api': 'http://localhost:3000',
