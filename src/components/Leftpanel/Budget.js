@@ -3,7 +3,7 @@ export default class Budget extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      text: '',
+      text: 0,
       budget: 0,
       expenses: []
     }
@@ -23,7 +23,7 @@ export default class Budget extends Component {
     return (
       <div>
       <input 
-        type="text"
+        type="number"
         // value={this.state.budget}
         onChange={this.handleChange}
         />

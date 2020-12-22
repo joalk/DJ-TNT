@@ -8,7 +8,7 @@ module.exports = {
     },
     devServer: {
         hot:true,
-        publicPath: 'bundle',
+        publicPath: '/bundle/',
         proxy: {
             '/api': 'http://localhost:3000',
         },
