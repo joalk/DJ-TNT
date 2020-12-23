@@ -1,28 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Expense extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      nameOfExpense: '',
-      amountOfExpense: 0,
-  
-    }
-    this.handleSubmit = this.handleSubmit.bind(this);
-     this.handleChange = this.handleChange.bind(this);
-  }
-  handleSubmit(e) {
-    e.preventDefault();
-    
-    this.setState({nameOfExpense:'',
-      amountOfExpense: ''
-    })
-  }
-  handleChange(e) {
-    this.setState({[e.target.name] : e.target.value})
-  }
-  render() {
-    return (
+export default function Expense(props) {
+  return (
+    <div>
       <div>
         <form>
           <input 
@@ -40,6 +20,6 @@ export default class Expense extends Component {
           <button onClick={this.handleSubmit}>Click Me I Do Nothing</button>
         </form>
       </div>
-    )
-  }
+    </div>
+  )
 }

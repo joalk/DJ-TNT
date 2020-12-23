@@ -1,38 +1,18 @@
-import React, { Component } from 'react'
-export default class Budget extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      text: 0,
-      budget: 0,
-      expenses: []
-    }
-    this.handleClick = this.handleClick.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange(e) {
-    let newText = e.target.value
-    this.setState({text: newText})
-  }
-    // why doesn't arrow functions work here?
-  handleClick(e) {
-    e.preventDefault();
-    this.setState({budget: this.state.text})
-  }
-  render() {
-    return (
-      <div>
+import React from 'react'
+
+export default function Budget(props) {
+  return (
+    <div>
       <input 
         type="number"
         // value={this.state.budget}
-        onChange={this.handleChange}
+        onChange={props.handleChange}
         />
         <button
         type="submit"
-        onClick={this.handleClick}
+        onClick={props.handleClick}
         >Add Budget</button>
-       <h1>{`$${this.state.budget}`}</h1>
+       <h1>{`$${props.budget}`}</h1>
       </div>
-    )
-  }
+  )
 }
