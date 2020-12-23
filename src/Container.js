@@ -36,13 +36,16 @@ handleExpenseSubmit(e) {
   e.preventDefault();
   //THERE IS A PROBLEM HERE I HAVE FIXED IT SO IT CURRENTLY 
   //DOES NOT BREAKE THE APP BUT ALSO IT DOES NOTHING NOW
-  this.setState({expenses:[e.target.value]
+  const newExpense = {name:this.state.nameOfExpense, amount: this.state.amountOfExpense}
+  this.setState({expenses: this.state.expenses.concat(newExpense)
   })
+  console.log(this.state)
 }
 //CREATE A METHOD THAT UPDATES STATE WITH THE CURRENT USERS INPUT 
 handleExpenseChange(e) {
   this.setState({[e.target.name] : e.target.value})
 }
+
   render() {
     return (
       <div>

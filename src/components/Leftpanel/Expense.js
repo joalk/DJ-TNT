@@ -2,11 +2,11 @@ import React from 'react'
 
 export default function Expense(props) {
   return (
-    <div>
+  
       <div>
         <form>
           <input 
-            type="number"
+            type="text"
             name="nameOfExpense"
             value={props.nameOfExpense}
             onChange={props.handleExpenseChange}
@@ -18,9 +18,12 @@ export default function Expense(props) {
             onChange={props.handleExpenseChange}
           />
           <button onClick={props.handleExpenseSubmit}>Click Me I Do Nothing</button>
-          <h1>{`$${props.expenses}`}</h1>
+          <ul>{props.expenses.map((item, i) => (
+            <li key={i}>{item.name} {item.amount} <button key={i}>X</button></li>
+          ))}
+          </ul>
         </form>
       </div>
-    </div>
+   
   )
 }
