@@ -31,7 +31,9 @@ export default class Container extends Component {
 //THIS METHOD CLEARS THE INPUT FIELD ON THE EXPENSE PANEL
 handleExpenseSubmit(e) {
   e.preventDefault();
-  this.setState({expenses:[nameOfExpense, amountOfExpense]
+  //THERE IS A PROBLEM HERE I HAVE FIXED IT SO IT CURRENTLY 
+  //DOES NOT BREAKE THE APP BUT ALSO IT DOES NOTHING NOW
+  this.setState({expenses:[e.target.value]
   })
 }
 //CREATE A METHOD THAT UPDATES STATE WITH THE CURRENT USERS INPUT 
