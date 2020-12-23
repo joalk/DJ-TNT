@@ -8,16 +8,17 @@ export default function Expense(props) {
           <input 
             type="number"
             name="nameOfExpense"
-            value={this.state.nameOfExpense}
-            onChange={this.handleChange}
+            value={props.nameOfExpense}
+            onChange={props.handleExpenseChange}
           />
           <input 
             type="number"
             name="amountOfExpense"
-            value={this.state.amountOfExpense}
-            onChange={this.handleChange}
+            value={props.amountOfExpense}
+            onChange={props.handleExpenseChange}
           />
-          <button onClick={this.handleSubmit}>Click Me I Do Nothing</button>
+          <button onClick={props.handleExpenseSubmit}>Click Me I Do Nothing</button>
+          <h1>{`$${props.expenses}`}</h1>
         </form>
       </div>
     </div>

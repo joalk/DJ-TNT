@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import Budget from "./components/Leftpanel/Budget"
+import Expense from "./components/Leftpanel/Expense"
 export default class Container extends Component {
   constructor(props) {
     super(props) 
@@ -30,8 +31,7 @@ export default class Container extends Component {
 //THIS METHOD CLEARS THE INPUT FIELD ON THE EXPENSE PANEL
 handleExpenseSubmit(e) {
   e.preventDefault();
-  this.setState({nameOfExpense:'',
-    amountOfExpense: ''
+  this.setState({expenses:[nameOfExpense, amountOfExpense]
   })
 }
 //CREATE A METHOD THAT UPDATES STATE WITH THE CURRENT USERS INPUT 
@@ -52,7 +52,8 @@ handleExpenseChange(e) {
             handleExpenseSubmit={this.handleExpenseSubmit}
             handleExpenseChange={this.handleExpenseChange}
             nameOfExpense={this.state.nameOfExpense}
-            amountOfExpense={this.state. amountOfExpense}
+            amountOfExpense={this.state.amountOfExpense}
+            expenses={this.state.expenses}
           />
       </div>
     )

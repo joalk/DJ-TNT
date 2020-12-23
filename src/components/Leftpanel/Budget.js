@@ -6,11 +6,11 @@ export default function Budget(props) {
       <input 
         type="number"
         // value={this.state.budget}
-        onChange={props.handleChange}
+        onChange={props.handleBudgetChange}
         />
         <button
         type="submit"
-        onClick={props.handleClick}
+        onClick={props.handleBudgetClick}
         >Add Budget</button>
        <h1>{`$${props.budget}`}</h1>
       </div>
