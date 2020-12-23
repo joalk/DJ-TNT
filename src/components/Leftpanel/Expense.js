@@ -1,45 +1,29 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Expense extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      nameOfExpense: '',
-      amountOfExpense: 0,
+export default function Expense(props) {
+  return (
   
-    }
-    this.handleSubmit = this.handleSubmit.bind(this);
-     this.handleChange = this.handleChange.bind(this);
-  }
-  handleSubmit(e) {
-    e.preventDefault();
-    
-    this.setState({nameOfExpense:'',
-      amountOfExpense: ''
-    })
-  }
-  handleChange(e) {
-    this.setState({[e.target.name] : e.target.value})
-  }
-  render() {
-    return (
       <div>
         <form>
           <input 
-            type="number"
+            type="text"
             name="nameOfExpense"
-            value={this.state.nameOfExpense}
-            onChange={this.handleChange}
+            value={props.nameOfExpense}
+            onChange={props.handleExpenseChange}
           />
           <input 
             type="number"
             name="amountOfExpense"
-            value={this.state.amountOfExpense}
-            onChange={this.handleChange}
+            value={props.amountOfExpense}
+            onChange={props.handleExpenseChange}
           />
-          <button onClick={this.handleSubmit}>Click Me I Do Nothing</button>
+          <button onClick={props.handleExpenseSubmit}>Click Me I Do Nothing</button>
+          <ul>{props.expenses.map((item, i) => (
+            <li key={i}>{item.name} {item.amount} <button key={i}>X</button></li>
+          ))}
+          </ul>
         </form>
       </div>
-    )
-  }
+   
+  )
 }
