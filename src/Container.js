@@ -9,7 +9,8 @@ export default class Container extends Component {
       budget: 0,
       expenses: [],
       nameOfExpense: '',
-      amountOfExpense: 0
+      amountOfExpense: 0,
+    
     }
     this.handleBudgetClick = this.handleBudgetClick.bind(this);
     this.handleBudgetChange = this.handleBudgetChange.bind(this);
@@ -19,6 +20,7 @@ export default class Container extends Component {
   //CREATE A METHOD TO UPDATE TEXT INSIDE OF STATE 
   handleBudgetChange(e) {
     let newText = e.target.value
+
     this.setState({text: newText})
   }
   // CREATE A METHOD TO UPDATE BUDGET WITH THE VALUE OF TEXT 
@@ -26,7 +28,8 @@ export default class Container extends Component {
   // FIND OUT IF THERE IS A WAY TO SKIP THIS REDUNDENT STEP
  handleBudgetClick(e) {
   e.preventDefault();
-  this.setState({budget: this.state.text})
+    this.setState({budget: this.state.text, text: ''})
+    
 }
 //THIS METHOD CLEARS THE INPUT FIELD ON THE EXPENSE PANEL
 handleExpenseSubmit(e) {
@@ -61,3 +64,18 @@ handleExpenseChange(e) {
     )
   }
 }
+
+
+// handleSubmit = (e) => {
+//       e.preventDefault();
+      
+//       if(this.state.task.length === 0) {
+//         return;
+//       } else {
+//         const newItem = this.state.task
+//         this.setState({
+//           item:  this.state.item.concat(newItem),
+//           task: ""
+//         })
+//       }
+//     }

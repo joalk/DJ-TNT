@@ -5,7 +5,7 @@ export default function Budget(props) {
     <div>
       <input 
         type="number"
-        // value={this.state.budget}
+         value={props.text}
         onChange={props.handleBudgetChange}
         />
         <button
