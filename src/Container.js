@@ -19,6 +19,7 @@ export default class Container extends Component {
     this.handleExpenseSubmit = this.handleExpenseSubmit.bind(this);
     this.handleExpenseChange = this.handleExpenseChange.bind(this);
     this.handleExpenseDelete = this.handleExpenseDelete.bind(this);
+    // this.handleExpenseEdit = this.handleExpenseEdit.bind(this);
   }
   //CREATE A METHOD TO UPDATE TEXT INSIDE OF STATE 
   handleBudgetChange(e) {
@@ -58,11 +59,13 @@ handleExpenseDelete(itemId) {
   });
 }
 
-// handleExpenseDelete(i, e) {
-//   const newExpense = Object.assign([], this.state.expenses);
-//   newExpense.splice(i, 1);
-//   this.setState({ expenses: newExpense,
-//   budget: this.state.budget })
+// STREATCH FEATURE
+// handleExpenseEdit() {
+//   for (let i = 0; i < this.state.expenses.length; i++) {
+//     if (this.state.expenses[i].id === itemId) {
+//       this.state.expenses[i].amount
+//     }
+//   }
 // }
 
   render() {
