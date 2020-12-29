@@ -4,7 +4,9 @@ export default function List(props) {
     return (
         <div>
             <ul>{props.expenses.map((item, i) => (
-                <li key={i}>{item.name} {`$${item.amount}`} <button onClick={props.handleExpenseDelete}key={i}>X</button></li>
+                <li key={item.id}>{item.name} 
+                <span>{`$${item.amount}`}</span> 
+                <button onClick={props.handleExpenseDelete.bind(null, item.id)}>X</button></li>
             ))}
             </ul>
         </div>
