@@ -1,5 +1,5 @@
 import React from 'react'
-import BudgetHooks from './components/LeftPanel/BudgetHooks'
+import BudgetHooks from '../ContextExample/BudgetHooks'
 const ContainerHooks = () => {
   const handleExpenseSubmit = (e) => {
     e.preventDefault();
