@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
-import ContainerHooks from './ContainerHooks'
-export default class App extends Component {
-  render() {
-    return (
+import React from 'react'
+// import { ContainerProvider } from './ContainerContext'
+import Container from './Container'
+export default function App() {
+  return (
       <div>
-      <ContainerHooks />
+        <Container />
       </div>
-    )
-  }
+  )
 }
