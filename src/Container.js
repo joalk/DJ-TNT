@@ -7,11 +7,11 @@ export default class Container extends Component {
   constructor(props) {
     super(props) 
     this.state = {
-      text: 0,
+      text: '',
       budget: 0,
       expenses: [],
       nameOfExpense: '',
-      amountOfExpense: 0,
+      amountOfExpense: '',
     
     }
     this.handleBudgetClick = this.handleBudgetClick.bind(this);

@@ -7,15 +7,16 @@ export default function Budget(props) {
   return (
     <div>
       <input 
+        placeholder="Enter Budget Here"
         type="number"
-         value={props.text}
+        value={props.text}
         onChange={props.handleBudgetChange}
         />
-        <button
+        <button className="addBudget"
         type="submit"
         onClick={props.handleBudgetClick}
         >Add Budget</button>
-       <h1>{`$${props.budget}`}</h1>
+       <h1 className="totalBudget">{`$${props.budget}`}</h1>
       </div>
   )
 }
